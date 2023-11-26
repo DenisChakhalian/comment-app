@@ -99,9 +99,13 @@ const isValidText = (text: string): Boolean => {
 
   const matches = text.match(regex);
 
+  console.log(matches);
+
   if (matches) {
-    for (const match of matches) {
-      const tagNameMatch = /<([^>\s/]+)[^>]*>/.exec(match);
+    for (let i = 0; i < matches.length; i++) {
+      const tagNameMatch = /<([^>\s/]+)[^>]*>/.exec(matches[i]);
+
+      console.log('tagNameMatch', tagNameMatch);
 
       if (tagNameMatch) {
         const tagName = tagNameMatch[1];
@@ -111,6 +115,10 @@ const isValidText = (text: string): Boolean => {
         if (!allowedTags.includes(tagName)) {
           return false;
         }
+      }
+
+      if (i % 2 === 0 && matches[i].slice(1) !== matches[i + 1].slice(2)) {
+        return false;
       }
     }
   }
@@ -123,7 +131,7 @@ const isValidUsername = (username: string): Boolean => {
 
   const matches = username.match(regex);
 
-  if (matches.length) {
+  if (matches?.length) {
     return false;
   }
 
