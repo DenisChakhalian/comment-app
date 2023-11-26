@@ -105,7 +105,7 @@ const isValidText = (text: string): Boolean => {
     for (let i = 0; i < matches.length; i++) {
       const tagNameMatch = /<([^>\s/]+)[^>]*>/.exec(matches[i]);
 
-      console.log('tagNameMatch', tagNameMatch);
+      // console.log('tagNameMatch', tagNameMatch);
 
       if (tagNameMatch) {
         const tagName = tagNameMatch[1];
@@ -115,10 +115,17 @@ const isValidText = (text: string): Boolean => {
         if (!allowedTags.includes(tagName)) {
           return false;
         }
-      }
 
-      if (i % 2 === 0 && matches[i].slice(1) !== matches[i + 1].slice(2)) {
-        return false;
+        console.log(matches[i].slice(1, tagName.length + 1));
+        console.log(matches[i + 1].slice(2, tagName.length + 2));
+
+        if (
+          i % 2 === 0 &&
+          matches[i].slice(1, tagName.length + 1) !==
+            matches[i + 1].slice(2, tagName.length + 2)
+        ) {
+          return false;
+        }
       }
     }
   }
