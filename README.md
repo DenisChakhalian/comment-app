@@ -3,9 +3,7 @@ This guide provides instructions on how to use the API to interact with posts da
 
 Server (websocket) -> wss://commentapp.onrender.com
 
-If the connection request fails
-
-Follow this link and wait for the page to load [Link](https://commentapp.onrender.com)
+If the connection request fails, follow this link and wait for the page to load [Link](https://commentapp.onrender.com)
 
 This is a problem with render.com because it shuts down the server if it is idle
 
@@ -95,9 +93,9 @@ The following endpoints are available in the API:
         },
         ...
       ],
-      count: number; // current number of all posts in db
-      pages: number; // current number of pages
-      currentPage: number; // current page
+      count: number, // current number of all posts in db
+      pages: number, // current number of pages
+      currentPage: number, // current page
     },
     type: "comments"
   }
@@ -132,7 +130,7 @@ The following endpoints are available in the API:
           homepage: "homepage", // homepage or null
           id: "user_id",
           username: "username",
-        }
+        },
         userId: "user_id"
       },
       ...
@@ -175,7 +173,7 @@ The following endpoints are available in the API:
         homepage: "homepage", // homepage or null
         id: "user_id",
         username: "username",
-      }
+      },
       userId: "user_id"
     },
     type: "add"
