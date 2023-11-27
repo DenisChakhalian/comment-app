@@ -88,7 +88,7 @@ The following endpoints are available in the API:
             homepage: "homepage", // homepage or null
             id: "user_id",
             username: "username",
-          }
+          },
           userId: "user_id"
         },
         ...
