@@ -9,7 +9,8 @@ module.exports = {
         userId: '74d0efa4-2d6f-4220-8f5e-55af04a328f0',
         content: 'hello every one!',
         creationDate: '2023-11-20 15:35:28.989 +02:00',
-        fileUrl: 'https://randomwordgenerator.com/img/picture-generator/g09c51d6247f88abd6e9145c1fc2af08348ea95ceb3334a3ac87087f6c92fdb3c25a4ea29f42ede7b17dbb77aca344108_640.jpg'
+        fileUrl:
+          'https://randomwordgenerator.com/img/picture-generator/g09c51d6247f88abd6e9145c1fc2af08348ea95ceb3334a3ac87087f6c92fdb3c25a4ea29f42ede7b17dbb77aca344108_640.jpg',
       },
       {
         id: 'e0d9e3ce-c425-4119-83a9-a67dedcfbd9b',

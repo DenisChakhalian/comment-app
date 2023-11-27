@@ -17,20 +17,20 @@ export function createServer() {
 
   webSocketServer.on('connection', ws => {
     ws.on('message', async m => {
-      const message: RequestData = JSON.parse(m.toString());
+      const message: RequestData = m.toString() ? JSON.parse(m.toString()) : null;
       let data: ResponseData;
 
-      switch (message.event) {
+      switch (message?.event) {
         case 'comments': {
           data = await commentsRoute.commentsRouter(message);
           ws.send(JSON.stringify(data));
           break;
         }
-        default: 
-        ws.send(JSON.stringify({error: 'Bad request!'}));
+        default:
+          ws.send(JSON.stringify({ error: 'Bad request!' }));
       }
 
-      if (message.action === 'post' && data.type !== ResponseType.Error) {
+      if (data && message && message.action === 'post' && data?.type !== ResponseType.Error) {
         webSocketServer.clients.forEach(function each(client) {
           if (client !== ws && client.readyState === WebSocket.OPEN) {
             client.send(JSON.stringify(data));
@@ -39,7 +39,7 @@ export function createServer() {
       }
     });
 
-    ws.on('error', (error) => ws.send(JSON.stringify(error)));
+    ws.on('error', error => ws.send(JSON.stringify(error)));
 
     ws.send(JSON.stringify({ message: 'Hi there, I am a WebSocket server' }));
   });

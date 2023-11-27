@@ -1,7 +1,11 @@
 import { Model } from 'sequelize-typescript';
 import { Comment, User } from '../models';
 import { FindOptions, Op, Sequelize } from 'sequelize';
-import { DirectionType, PayloadDataGet, SortByType } from '../interfaces/requests.interfaces';
+import {
+  DirectionType,
+  PayloadDataGet,
+  SortByType,
+} from '../interfaces/requests.interfaces';
 
 const DEFAULT_LIMIT = 25;
 

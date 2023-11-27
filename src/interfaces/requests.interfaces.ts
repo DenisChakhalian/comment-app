@@ -1,6 +1,9 @@
 import { Comment, User } from 'models';
 
-export type RequestData = RequestDataPost | RequestDataGet | RequestDataGetChilds;
+export type RequestData =
+  | RequestDataPost
+  | RequestDataGet
+  | RequestDataGetChilds;
 
 export type GetObjDifferentKeys<T, U> = Omit<T, keyof U> & Omit<U, keyof T>;
 

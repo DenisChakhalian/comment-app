@@ -39,7 +39,7 @@ module.exports = {
       fileUrl: {
         type: DataTypes.STRING,
         require: false,
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {

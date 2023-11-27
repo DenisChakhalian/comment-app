@@ -19,5 +19,5 @@ export class Comment extends Model {
   @Column
   creationDate?: Date;
   @Column
-  fileUrl?:string
+  fileUrl?: string;
 }
